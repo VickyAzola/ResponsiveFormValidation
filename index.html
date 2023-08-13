@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Frontend Mentor | Intro component with sign up form</title>
+</head>
+
+<body class="bg-[url('images/bg-intro-mobile.png')] bg-[#ff7a7a] flex flex-col min-h-screen items-center justify-center
+            md:bg-[url('images/bg-intro-desktop.png')]">
+  
+  <main class="mx-8 mt-8 md:my-10 md:grid md:grid-cols-2 md:gap-x-12 lg:gap-x-16 md:mx-14">
+
+    <section class="text-white text-center md:text-left md:grid md:place-content-center md:max-w-xl">
+      <h1 class="text-3xl font-bold md:text-5xl">Learn to code by watching others</h1>
+      <p class="mt-4 mb-12 md:mt-10 md:text-lg">  
+        See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+        but understanding how developers think is invaluable. 
+      </p>
+    </section>
+
+    <section class="md:order-last md:max-w-xl">
+      <div class="text-white bg-[#6055a5] text-center py-4 px-16 md:px-4 rounded-lg shadow-[0_7px_rgba(0,0,0,0.18)]">
+        <p><span class="font-bold">Try it free 7 days</span> then $20/mo. thereafter</p>
+      </div>
+
+      <form id="form" name="fullForm" onsubmit="return validForm(event)" required
+        class="bg-white flex flex-col gap-y-1 my-4 rounded-lg p-6 shadow-[0_7px_rgba(0,0,0,0.18)]">
+        <label for="firstName"></label>
+        <input type="text" name="firstName" id="firstName" placeholder="First Name"  pattern="[A-Za-z]{2,30}" maxlength="30" title="Only Letters from A to Z"
+          class="border border-[#e2e1ed] rounded p-3 font-semibold" aria-label="FirstName, only Letters from A to Z">
+        <div class="relative">
+          <img class="iconoError hidden w-6 absolute top-[-2.6rem] right-[1.3rem]" src="images/icon-error.svg" alt=""/>
+        </div>
+        <span class="errorMessage text-[#ff7a7a] text-right italic mr-2 text-xs mb-2"></span>
+
+        <label for="lastName"></label>
+        <input type="text" name="lastName" id="lastName" placeholder="Last Name" pattern="[A-Za-z]{2,30}" maxlength="30" title="Only Letters from A to Z"
+          class="border border-[#e2e1ed] rounded p-3 font-semibold" aria-label="Last Name, only Letters from A to Z">
+        <div class="relative">
+          <img class="iconoError hidden w-6 absolute top-[-2.6rem] right-[1.3rem]" src="images/icon-error.svg" alt=""/>
+        </div>
+        <span class="errorMessage text-[#ff7a7a] text-right italic mr-2 text-xs mb-2"></span>
+
+        <label for="email"></label>
+        <input type="email" name="email" id="email" placeholder="Email Address" aria-label="Email"
+          class="border border-[#e2e1ed] rounded p-3 font-semibold">
+        <div class="relative">
+          <img class="iconoError hidden w-6 absolute top-[-2.6rem] right-[1.3rem]" src="images/icon-error.svg" alt=""/>
+        </div>
+        <span class="errorMessage text-[#ff7a7a] text-right italic mr-2 text-xs mb-2"></span>
+
+        <label for="password"></label>
+        <input type="password" name="password" id="password" placeholder="Password" pattern="[A-Za-z0-9]{8,15}" maxlength="15" 
+          title="Your password must be between 8 and 15 characters that include letters and numbers" 
+          aria-label="Password, it must be between 8 and 15 characters that include letters and numbers"
+          class="border border-[#e2e1ed] rounded p-3 font-semibold">
+        <div class="relative">
+          <img class="iconoError hidden w-6 absolute top-[-2.6rem] right-[1.3rem]" src="images/icon-error.svg" alt=""/>
+        </div>
+        <span class="errorMessage text-[#ff7a7a] text-right italic mr-2 text-xs mb-2"></span>
+
+        <button type="submit" class="bg-[#38cc8c] text-white uppercase font-semibold py-3 rounded my-2 hover:bg-[#77e6b6]">Claim your free trial </button>
+        <p class="text-center text-xs text-[#b9b6d3] leading-6">By clicking the button, you are agreeing to our
+          <a href="#" class="text-[#ff7a7a] font-extrabold">Terms and Services</a>
+        </p>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="my-2 md:my-4 md:fixed md:bottom-0 w-full text-center">
+    <p class="text-xs text-white">
+      Challenge by <a class="font-bold" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a class="font-bold" href="#" target="_blank">Victoria Azola</a>.
+    </p>
+  </footer>
+
+</body>
+<script src="index.js"></script>
+</html>
